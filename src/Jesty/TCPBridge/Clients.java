@@ -39,11 +39,7 @@ public class Clients {
         try {
             ClientWorker w;
             w = new ClientWorker(id, socket, server);
-            //Logger.logMessage("[Info]: Client joined, assigning id" + id);
-            //jServer.addClient(w);
-
             clients.add(w);
-            //threads.add(w);
             new Thread(w).start();
             w.connect();
             id ++;
@@ -57,13 +53,8 @@ public class Clients {
         try {
             ClientWorker w;
             w = new ClientWorker(id, socket, server);
-            //Logger.logMessage("[Info]: Client joined, assigning id" + id);
-            //jServer.addClient(w);
-            //Todo: make clientworker itself not runnable, have it spin up a runnable message receiver if needed
             clients.add(w);
             w.connect();
-            //threads.add(w);
-            //new Thread(w).start();
             id ++;
         }
         catch (Exception e) {

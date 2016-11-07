@@ -3,15 +3,15 @@ package Jesty.TCPBridge;
 import java.util.ArrayList;
 
 /**
- * Created by S199753733 on 10/19/2016.
+ * Created by Evan on 10/19/2016.
  *
  *
  */
 public class Server {
 
-    protected Clients clients;
+    private Clients clients;
 
-    int raw_port, web_port;
+    private int raw_port, web_port;
 
     public Server(int raw_port, int web_port) {
         this.web_port = web_port;
@@ -37,9 +37,11 @@ public class Server {
             client.sendMessage(message);
         }
     }
+
     public void onClose(ClientWorker clientWorker, int code) {
         clients.getList().remove(clientWorker);
     }
+
     public void onOpen(ClientWorker clientWorker, int code) {
 
     }

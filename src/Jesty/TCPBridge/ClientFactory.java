@@ -4,7 +4,7 @@ import java.net.ServerSocket;
 import java.util.ArrayList;
 
 /**
- * Created by S199753733 on 10/18/2016.
+ * Created by Evan on 10/18/2016.
  *
  * Handles raw tcp/ip connections
  */

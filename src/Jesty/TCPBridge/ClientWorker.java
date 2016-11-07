@@ -10,7 +10,7 @@ import java.net.SocketException;
 
 
 /**
- * Created by S199753733 on 10/19/2016.
+ * Created by Evan on 10/19/2016.
  */
 public class ClientWorker implements Runnable {
 
@@ -20,14 +20,14 @@ public class ClientWorker implements Runnable {
 
     SocketType socketType;
 
-    Socket socket;
+    private Socket socket;
 
     WebSocket webSocket;
 
-    DataInputStream in = null;
-    DataOutputStream out = null;
+    private DataInputStream in = null;
+    private DataOutputStream out = null;
 
-    Server server;
+    private Server server;
 
     public Object clientData;
 

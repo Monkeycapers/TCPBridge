@@ -10,34 +10,24 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 /**
- * Created by S199753733 on 10/19/2016.
+ * Created by Evan on 10/19/2016.
  */
 public class WebFactory extends WebSocketServer {
 
-   Clients clients;
+    private Clients clients;
 
     public WebFactory(Clients clients, int port) {
         super(new InetSocketAddress(port));
         this.clients = clients;
-        //this.jServer = jServer;
     }
 
 
     public void onOpen(org.java_websocket.WebSocket client, ClientHandshake handshake) {
-        client.send("You have connected");
-        System.out.println("got a connection: " + client.getRemoteSocketAddress().getAddress().getHostAddress());
-        //jServer.clientFactory.addWebClient(client);
-
-        //Todo: Make clients a Class and make this and clientFactory use a method in clients to add a web or raw client
-
         clients.add(client);
-
     }
 
     public void onClose (WebSocket client, int code, String reason, boolean remote) {
-        //this.sendToAll("lost a client.");
         System.out.println(code + ", " + reason + ", " + remote);
-        //jServer.removeClient(jServer.getClient(client).id);
         clients.get(client).disconnect();
 
     }
@@ -53,16 +43,5 @@ public class WebFactory extends WebSocketServer {
     public void onError(WebSocket client, Exception ex) {
         ex.printStackTrace();
     }
-
-    //public void sendToAll( String text ) {
-       // Collection<WebSocket> con = connections();
-        //synchronized ( con ) {
-        //    for( WebSocket c : con ) {
-        //        c.send( text );
-        //    }
-      //  }
-
-    //}
-
 
 }
