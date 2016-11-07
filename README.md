@@ -5,6 +5,8 @@ Usage: Server
 
 Sample Server class
 
+```
+
 import Jesty.TCPBridge.ClientWorker;
 import Jesty.TCPBridge.Server;
 
@@ -40,7 +42,11 @@ public class YourServer extends Server {
     }
 }
 
+```
+
 Sample Client Class
+
+```
 
 public class YourClient extends Client {
 
@@ -67,3 +73,5 @@ public class YourClient extends Client {
     }
 
 }
+
+```
